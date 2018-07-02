@@ -1,0 +1,33 @@
+<div id="app">
+    <!-- v-on 디렉티브를 이용해 이벤트 처리하기 -->
+    <button v-on:click="clickBtn1">클릭</button>
+
+    <!-- v-on 디렉티브로 메소드 호출할 때 인자 값 넘기기 -->
+    <button v-on:click="clickBtn2(10)">클릭</button>
+
+    <!-- event 인자를 이용해 돔 이벤트에 접근하기 -->
+    <button v-on:click="clickBtn3">클릭</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        methods: {
+            // v-on 디렉티브를 이용해 이벤트 처리하기
+            clickBtn1: function() {
+                alert('clicked');
+            },
+
+            // v-on 디렉티브로 메소드 호출할 때 인자 값 넘기기
+            clickBtn2: function(num) {
+                alert('clicked ' + num + ' times');
+            },
+
+            // event 인자를 이용해 돔 이벤트에 접근하기
+            clickBtn3: function(event) {
+                console.log(event);
+            }
+        }
+    });
+</script>

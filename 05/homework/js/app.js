@@ -20,7 +20,7 @@ var app = new Vue({
     methods: {
         // ES6 문법
         clickBtn() {
-            alert("hi");
+            alert("clickBtn - alert");
         },
         // ES5 문법 - 위 ES6 문법과 동일한 코드
         // clickBtn: function() {
@@ -30,7 +30,7 @@ var app = new Vue({
         // 할 일 #3
         // eventMethod를 하나 추가하고 index.html의 #3 영역에 해당 이벤트를 실행하는 버튼을 추가하세요.
         anotherClickBtn() {
-            confirm("hihi");
+            confirm("anotherClickBtn - confirm");
         }
     }
 })

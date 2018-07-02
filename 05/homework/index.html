@@ -26,9 +26,10 @@
 
             <!-- #4. 데이터의 flag 속성 값의 변화에 따라 아래 내용이 어떻게 변하는지 확인 -->
             <ul v-if="flag">
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
+                <li>if</li>
+            </ul>
+            <ul v-show="flag">
+                <li>show</li>
             </ul>
         </section>
     </div>
