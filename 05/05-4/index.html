@@ -14,6 +14,8 @@
         <p v-show="flag">두잇 Vue.js</p> <!-- 3️⃣ -->
         <h5 v-bind:id="uid">뷰 입문서</h5> <!-- 4️⃣ -->
         <button v-on:click="popupAlert">경고 창 버튼</button> <!-- 5️⃣ -->
+
+        <input v-model="message">
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
@@ -23,11 +25,17 @@
             data: {
                 flag: true, // 1️⃣, 3️⃣
                 systems: ['android', 'ios', 'window'], // 2️⃣
-                uid: 10 // 4️⃣
+                uid: 10, // 4️⃣
+                message: 'message'
             },
             methods: {
                 popupAlert: function() { // 5️⃣
                     return alert('경고 창 표시');
+                }
+            },
+            watch: {
+                message: function(data) {
+                    console.log("데이터 변경 : ", data);
                 }
             }
         });

@@ -7,7 +7,11 @@
 </head>
 <body>
     <div id="app">
-        <p>{{ message }}</p>
+        <!-- computed -->
+        <p>{{ reversedMsg }}</p>
+
+        <!-- methods -->
+        <p>{{ message2 }}</p>
         <button v-on:click="reverseMsg">문자열 역순</button>
     </div>
 
@@ -16,12 +20,18 @@
         var app = new Vue({
             el: '#app',
             data: {
-                message: 'Hello Vue.js!'
+                message1: 'Hello Vue.js!',
+                message2: 'Hello Vue.js!'
+            },
+            computed: {
+                reversedMsg: function() {
+                    return this.message1.split('').reverse().join('');
+                }
             },
             methods: {
-                reversedMsg: function() {
-                    this.message = this.message.split('').reverse().join('');
-                    return this.message;
+                reverseMsg: function() {
+                    this.message2 = this.message2.split('').reverse().join('');
+                    return this.message2;
                 }
             }
         });
